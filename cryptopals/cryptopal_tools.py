@@ -1,3 +1,5 @@
+import random
+
 def padPKCS7(a,k):
 	ch = k - (len(a)%k)
 	return a + (bytes(chr(ch)) * ch)
@@ -19,7 +21,7 @@ def padding(a,b,mode):
 	if (mode == REPEAT):
 		return a,padRepeat(b,len(a))
 	elif len(a) > len(b):
-		return a, padPKCS7(b,len(a))
+		return a,padPKCS7(b,len(a))
 	else:
 		return padPKCS7(a,len(b)), b
 
@@ -84,3 +86,6 @@ def isECBencoded(data, block_size):
 			if data[i*block_size:(i+1)*block_size] == data[j*block_size:(j+1)*block_size]:
 				return True
 	return False
+
+def randBytes(len):
+	return ''.join(chr(random.randint(0,255)) for i in range(len))
