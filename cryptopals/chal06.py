@@ -1,8 +1,8 @@
 import itertools
+import base64
 
 def hammingDistance(a,b):
 	return sum([bin(ord(i)^ord(j)).count('1') for (i,j) in zip(a,b)])
-
 
 def findKeyLength(s):
 	res = len(41)
@@ -11,7 +11,7 @@ def findKeyLength(s):
 		pairs = list(itertools.combination(blocks,2))
 		
 
-file = open('chal6.inp','r').read()
+file = open('6.txt','r').read()
 file = base64.b64decode(file)
 
 #test
@@ -20,8 +20,8 @@ y = "wokka wokka!!!"
 print hammingDistance(x,y)
 #done
 
-length = findKeyLength(file)
+output = open('6_b64decode.txt','w')
+output.write(file)
 
-print key, chal5.solvePaddingXOR(key,file)
-
-
+xortool 6_b64decode.txt -l 29 -o 
+key = Terminator X3a Bring the noise

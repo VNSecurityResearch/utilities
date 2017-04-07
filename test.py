@@ -1,4 +1,4 @@
-from Crypto import Cipher
+'''from Crypto import Cipher
 
 p = 14388938207215931867
 q = 8870679236659621067
@@ -26,4 +26,32 @@ d = gmpy2.invert(e,phi)
 print 'd =', d
 
 print (d*e)%phi
+
+f = open('/Users/minhtt159/message.enc','r').read()
+
+print f.encode('hex')
+'''
+
+s = 'Pham'
+t = 'Minh'
+v = 'Hanh'
+
+def strxor(a,b):
+	return ''.join(chr(ord(x)^ord(y)) for (x,y) in zip(a,b)).encode('hex')
+
+print strxor(s,t), strxor(t,v), strxor(v,s)
+'''
+
+import string
+
+alphabet = string.ascii_lowercase
+
+print alphabet
+
+s = 'imissyou'
+
+for i in s:
+	print (alphabet.index(i) + 1),
+
+
 

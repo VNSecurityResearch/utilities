@@ -1,4 +1,4 @@
-def uncheckPKCD7(data):
+def uncheckPKCS7(data):
 	if isinstance(data,str) == False:
 		raise ValueError
 	i = data[-1]
@@ -8,4 +8,4 @@ def uncheckPKCD7(data):
 	else:
 		raise ValueError
 
-print uncheckPKCD7("ICE ICE BABY\x04\x04\x04\x04")
+print uncheckPKCS7("ICE ICE BABY\x04\x04\x04\x04")
